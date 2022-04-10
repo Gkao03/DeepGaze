@@ -22,7 +22,7 @@ class Normalizer(nn.Module):
 class RGBResNext50(nn.Sequential):
     def __init__(self):
         super(RGBResNext50, self).__init__()
-        self.resnext = torch.hub.load('pytorch/vision:v0.5.0', 'resnext50_32x4d', pretrained=True) 
+        self.resnext = torch.hub.load('pytorch/vision:v0.10.0', 'resnext50_32x4d', pretrained=True) 
         self.normalizer = Normalizer()
         super(RGBResNext50, self).__init__(self.normalizer, self.resnext)
 
